@@ -59,8 +59,8 @@ jobs:
         kubeconfig: ${{secrets.KUBECONFIG}}  
 #      id: login
       
-    - name: Apply AKS Deployment
-      run: kubectl apply -f deployment.yaml
+#     - name: Apply AKS Deployment
+#       run: kubectl apply -f deployment.yaml
       
-    - name: Apply AKS Deployment
-      run: kubectl apply -f service.yaml    
+#     - name: Apply AKS Deployment
+#       run: kubectl apply -f service.yaml    
