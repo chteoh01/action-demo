@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chteoh-deploy
+spec:
+  selector:
+    matchLabels:
+      app: chteoh-action
+  template:
+    metadata:
+      labels:
+        app: chteoh-action
+    spec:
+      containers:
+      - name: chteoh-action
+        image: inteltrainingacr02.azurecr.io/chteoh-action:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
