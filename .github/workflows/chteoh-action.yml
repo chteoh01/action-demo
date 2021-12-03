@@ -68,7 +68,6 @@ jobs:
         resource-group: Intel_RG_01
         # AKS Cluster Name
         cluster-name: sidlabaks03
-		
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
       with:
