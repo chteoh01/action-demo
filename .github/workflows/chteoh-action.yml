@@ -82,7 +82,7 @@ jobs:
       run : export HELM_EXPERIMENTAL_OCI=1  
       
     - name: Helm Chart Pull
-      run: helm chart pull sidlabacr03.azurecr.io/charts-chteoh-api:latest
+      run: helm chart pull sidlabacr03.azurecr.io/chart-chteoh-api:latest
    
     - name: Helm Chart Move
       run: helm chart export sidlabacr03.azurecr.io/chart-chteoh-api:latest --destination ./install
