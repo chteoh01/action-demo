@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag sidlabacr03.azurecr.io/chteoh-action:latest
+      run: docker build . --file Dockerfile --tag sidlabacr03.azurecr.io/chteoh-app:latest
    
     - name: Azure Container Registry Login
       uses: Azure/docker-login@v1
@@ -36,7 +36,7 @@ jobs:
         # Container registry server url
         login-server: sidlabacr03.azurecr.io
     - name: Push the Docker image
-      run: docker push sidlabacr03.azurecr.io/chteoh-api:latest
+      run: docker push sidlabacr03.azurecr.io/chteoh-app:latest
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
       with:
@@ -49,7 +49,7 @@ jobs:
       run: helm package ./helm/chteoh-api
     - name: Retag helm chart
       run: |
-        helm chart save ./chteoh-api-0.1.0.tgz sidlabacr03.azurecr.io/chart-chteoh-app:latest
+        helm chart save ./chteoh-api-0.1.0.tgz sidlabacr03.azurecr.io/chart-chteoh-api:latest
     - name: Push helm chart
       run: helm chart push sidlabacr03.azurecr.io/chart-chteoh-api:latest
 
