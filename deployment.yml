@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: chteoh-api
-        image: sidlabacr03.azurecr.io/actiondemo01:latest
+        image: sidlabacr03.azurecr.io/chteoh-demo:latest
         resources:
           limits:
             memory: "128Mi"
