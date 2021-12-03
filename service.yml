@@ -4,7 +4,7 @@ metadata:
   name: chteoh-service
 spec:
   selector:
-    app: chteoh-action
+    app: chteoh-app
   ports:
   - port: 5000
     targetPort: 5000
