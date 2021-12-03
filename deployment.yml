@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: chteoh-action
+      app: chteoh-app
   template:
     metadata:
       labels:
-        app: chteoh-action
+        app: chteoh-app
     spec:
       containers:
-      - name: chteoh-action
+      - name: chteoh-api
         image: sidlabacr03.azurecr.io/chteoh-action:latest
         resources:
           limits:
