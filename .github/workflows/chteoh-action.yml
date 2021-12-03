@@ -62,5 +62,5 @@ jobs:
     - name: Apply AKS Deployment
       run: kubectl apply -f deployment.yml
       
-#     - name: Apply AKS Deployment
-#       run: kubectl apply -f service.yml    
+    - name: Apply AKS Deployment
+      run: kubectl apply -f service.yml    
