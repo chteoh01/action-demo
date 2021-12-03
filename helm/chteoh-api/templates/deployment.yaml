@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.app.name }}
+  labels:
+    app: {{ .Values.app.name }}
+    group: {{ .Value.app.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Value.app.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Value.app.name }}
+        group: {{ .Value.app.name }}
+    spec:
+      imagePullSecrets:
+        - name: acr-auth
+      containers:
+        - name: {{ .Value.app.name }}
+          image: {{ .Value.app.name }}:{{ .Value.image.tag }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          requests:
+            {{- toYaml .Values.requests | nindent 12 }}
