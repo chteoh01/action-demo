@@ -4,23 +4,23 @@ metadata:
   name: {{ .Values.app.name }}
   labels:
     app: {{ .Values.app.name }}
-    group: {{ .Value.app.name }}
+    group: {{ .Values.app.name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ .Value.app.name }}
+      app: {{ .Values.app.name }}
   template:
     metadata:
       labels:
-        app: {{ .Value.app.name }}
-        group: {{ .Value.app.name }}
+        app: {{ .Values.app.name }}
+        group: {{ .Values.app.name }}
     spec:
       imagePullSecrets:
         - name: acr-auth
       containers:
-        - name: {{ .Value.app.name }}
-          image: {{ .Value.app.name }}:{{ .Value.image.tag }}
+        - name: {{ .Values.app.name }}
+          image: {{ .Values.app.name }}:{{ .Values.image.tag }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           requests:
